@@ -3,12 +3,15 @@ package com.dicoding.picodiploma.mycamera
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.dicoding.picodiploma.mycamera.databinding.ActivityMainBinding
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -64,7 +67,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)
-        startActivity(intent)
+        launcerIntentCameraX.launch(intent)
+    }
+
+    private val launcerIntentCameraX = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ){
+        if (it.resultCode == CAMERA_X_RESULT) {
+            val myFile = it.data?.getSerializableExtra("picture") as File
+            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
+
+            val result = rotateBitmap( BitmapFactory.decodeFile(myFile.path), isBackCamera)
+            binding.previewImageView.setImageBitmap(result)
+        }
+
     }
 
     private fun startGallery() {
