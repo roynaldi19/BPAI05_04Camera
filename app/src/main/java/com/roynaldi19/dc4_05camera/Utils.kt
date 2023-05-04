@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.mycamera
+package com.roynaldi19.dc4_05camera
 
 import android.app.Application
 import android.content.ContentResolver

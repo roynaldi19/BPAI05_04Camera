@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.mycamera
+package com.roynaldi19.dc4_05camera
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.mycamera
+package com.roynaldi19.dc4_05camera
 
 import android.Manifest
 import android.content.Intent
@@ -14,9 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.dicoding.picodiploma.mycamera.api.ApiConfig
-import com.dicoding.picodiploma.mycamera.databinding.ActivityMainBinding
-import com.dicoding.picodiploma.mycamera.model.FileUploadResponse
+import com.roynaldi19.dc4_05camera.api.ApiConfig
+import com.roynaldi19.dc4_05camera.databinding.ActivityMainBinding
+import com.roynaldi19.dc4_05camera.model.FileUploadResponse
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -26,7 +26,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.*
-
 
 class MainActivity : AppCompatActivity() {
 

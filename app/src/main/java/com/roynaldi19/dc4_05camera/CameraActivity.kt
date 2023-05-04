@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.mycamera
+package com.roynaldi19.dc4_05camera
 
 import android.content.Intent
 import android.os.Build
@@ -13,8 +13,7 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import com.dicoding.picodiploma.mycamera.databinding.ActivityCameraBinding
-import java.lang.Exception
+import com.roynaldi19.dc4_05camera.databinding.ActivityCameraBinding
 
 class CameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding
@@ -55,7 +54,10 @@ class CameraActivity : AppCompatActivity() {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                     val intent = Intent()
                     intent.putExtra("picture", photoFile)
-                    intent.putExtra("isBackcamera", cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA)
+                    intent.putExtra(
+                        "isBackcamera",
+                        cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
+                    )
                     setResult(MainActivity.CAMERA_X_RESULT, intent)
                     finish()
                 }

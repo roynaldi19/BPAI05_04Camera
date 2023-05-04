@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.mycamera.model
+package com.roynaldi19.dc4_05camera.model
 
 import com.google.gson.annotations.SerializedName
 

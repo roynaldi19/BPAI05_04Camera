@@ -1,6 +1,6 @@
-package com.dicoding.picodiploma.mycamera.api
+package com.roynaldi19.dc4_05camera.api
 
-import com.dicoding.picodiploma.mycamera.model.FileUploadResponse
+import com.roynaldi19.dc4_05camera.model.FileUploadResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call

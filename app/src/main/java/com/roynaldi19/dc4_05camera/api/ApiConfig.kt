@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.mycamera.api
+package com.roynaldi19.dc4_05camera.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
