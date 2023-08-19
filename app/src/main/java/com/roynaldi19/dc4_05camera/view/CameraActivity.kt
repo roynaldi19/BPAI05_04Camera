@@ -1,4 +1,4 @@
-package com.roynaldi19.dc4_05camera
+package com.roynaldi19.dc4_05camera.view
 
 import android.content.Intent
 import android.os.Build
@@ -13,11 +13,11 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import com.roynaldi19.dc4_05camera.createFile
 import com.roynaldi19.dc4_05camera.databinding.ActivityCameraBinding
 
 class CameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding
-
     private var imageCapture: ImageCapture? = null
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
@@ -45,7 +45,6 @@ class CameraActivity : AppCompatActivity() {
 
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
-
         val photoFile = createFile(application)
 
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
@@ -74,7 +73,6 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun startCamera() {
-
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
         cameraProviderFuture.addListener({

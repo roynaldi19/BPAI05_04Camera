@@ -1,4 +1,4 @@
-package com.roynaldi19.dc4_05camera
+package com.roynaldi19.dc4_05camera.view
 
 import android.Manifest
 import android.content.Intent
@@ -15,8 +15,12 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.roynaldi19.dc4_05camera.api.ApiConfig
+import com.roynaldi19.dc4_05camera.createCustomTempFile
 import com.roynaldi19.dc4_05camera.databinding.ActivityMainBinding
 import com.roynaldi19.dc4_05camera.model.FileUploadResponse
+import com.roynaldi19.dc4_05camera.reduceFileImage
+import com.roynaldi19.dc4_05camera.rotateBitmap
+import com.roynaldi19.dc4_05camera.uriToFile
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -97,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         createCustomTempFile(application).also {
             val photoURI: Uri = FileProvider.getUriForFile(
                 this@MainActivity,
-                "com.dicoding.picodiploma.mycamera",
+                "com.roynaldi19.dc4_05camera",
                 it
             )
             currentPhotoPath = it.absolutePath
